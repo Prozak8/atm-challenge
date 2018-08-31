@@ -6,7 +6,7 @@ class Account
     def initialize(attrs = {})
         @pin_code = rand(1000..9999)
         @account_status = :active
-        @exp_date = set_expire_date(exp_date)
+        @exp_date = set_expire_date
         set_owner(attrs[:owner])
         @balance = 0
     end
@@ -17,7 +17,7 @@ class Account
         obj == nil ? missing_owner : @owner = obj
     end
 
-    def set_expire_date(exp_date)
+    def set_expire_date
         Date.today.next_year(Account::STANDARD_VALIDITY_YRS).strftime('%m/%y')
     end
 
