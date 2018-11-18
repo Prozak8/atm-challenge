@@ -1,4 +1,3 @@
-
 class Account
     STANDARD_VALIDITY_YRS = 5
     attr_accessor :exp_date, :account_status, :owner, :pin_code, :balance
